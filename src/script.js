@@ -160,7 +160,7 @@ checkoutBtn.addEventListener("click", function() {
     const message = encodeURIComponent(cartItems)
     const phone = "+5585997627263"
 
-    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank")
+    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value} Total: ${cartTotal}`, "_blank")
 
     cart.length = 0
     updateCartModal()
@@ -170,7 +170,7 @@ checkoutBtn.addEventListener("click", function() {
 
 function checkRestaurantOpen() {
     const data = new Date()
-    const hora = getHours()
+    const hora = data.getHours()
     return hora >= 18 && hora < 24
 
 }
